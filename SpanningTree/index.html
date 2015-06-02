@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spanning Tree</title>
+		  <style>
+			#header {
+				background-color:BurlyWood;
+				color:SaddleBrown;
+				text-align:center;
+				font-size:40px;
+				padding:5px;
+				width:1000px;
+				height:170px;
+				margin-left:170px;
+			}
+			#nav {
+				line-height:50px;
+				background-color:LemonChiffon;
+				height:1573px;
+				width:130px;
+				font-size:20px;
+				text-align:justify;
+				float:left;
+				padding:5px;
+				margin-left:170px;
+				color:SaddleBrown;
+			}
+			#section {
+				width:850px;
+				background-color:White;
+				font-size:20px;
+				text-align:justify;
+				float:left;
+				padding:10px;
+				color:SaddleBrown;
+			}
+			#footer {
+				background-color:BurlyWood;
+				color:SaddleBrown;
+				clear:both;
+				text-align:center;
+				padding:5px;
+				width:1000px;
+				height:21px;
+				margin-left:170px;
+			}
+			#a {
+				color:SaddleBrown;
+				text-decoration: none
+			}
+			#a:hover {
+				color:Tomato;
+				text-decoration: none
+			}
+			#graf1 {
+				margin-left:350px;
+			}
+			#graf2 {
+				margin-left:260px;
+			}
+			#graf3 {
+				margin-left:200px;
+			}
+		  </style> 
+	</head>
+	<body background="black_cracked.jpg" bgproperties="fixed">
+		<div id="header">
+		<h1>Algoritma Spanning Tree</h1>
+		</div>
+
+		<div id="nav">
+		<a id="a" href="index.html">
+		Spanning Tree<br>
+		</a>
+		<a id="a" href="Maze.html">
+		Maze<br>
+		</a>
+		<a id="a" href="Penerapan.html">
+		Penerapan<br>
+		</a>
+		</div>
+
+		<div id="section">
+		<h1>Spanning Tree</h1>
+		<p>
+			Kita mulai dengan graf tanpa arah yang terdiri dari satu set V simpul (juga
+			disebut node) dan satu set E tepi, masing-masing menghubungkan dua simpul yang berbeda.
+			Sebuah graf terhubung jika kita bisa mencapai titik apapun dari setiap titik lainnya
+			dengan mengikuti tepi di kedua arah. Dalam graf berarah tepi memberikan
+			koneksi dari satu node ke yang lain, tetapi belum tentu di seberang
+			arah. Lebih matematis, kita mengatakan bahwa hubungan antara tepi simpul
+			simetris untuk grafik tanpa arah. 
+		</p>
+		<p>
+			Berikut ini adalah contoh sederhana dari graf terhubung tanpa arah dengan 5 simpul 
+			(A, B, C, D, E) dan 6 tepi (AB, BC, CD, AE, BE, CE).
+		</p>
+		<img id="graf1" src="Image/1.png">
+		<p>
+			Pohon adalah adalah graf terhubung tanpa siklus. Sebuah pohon rentang untuk
+			graf terhubung G adalah pohon yang mengandung semua simpul dari G. Dibawah ini adalah
+			dua contoh pohon merentang.
+		</p>
+		<img id="graf2" src="Image/2.png">
+		<p>
+			Ada banyak algoritma yang dapat digunakan untuk mencari pohon rentang graf terhubung.
+			Yang pertama adalah contoh dari vertex-centric algorithm.<br>
+			1. Pilih sebuah simpul sembarang dan tandai.<br>
+			2. Ulangi sampai semua node ditandai :<br>
+			(a) Pilih sebuah simpul u sembarang di pohon dengan tepi e ke titik w yang
+			tidak ada di pohon. Tambahkan e ke spanning tree dan tandai w sebagai pohon.<br><br>
+			Kita lakukan langkah 2 sebanyak n-1 kali, karena ada n-1 simpul yang harus
+			ditambahkan ke pohon. Efisiensi algoritma ditentukan oleh seberapa
+			efisien kita bisa menemukan kualifikasi w.<br><br>
+			Algoritma kedua adalah edge-centric algorithm.<br>
+			1. Mulailah dengan koleksi pohon tunggal, masing-masing dengan tepat satu simpul.<br>
+			2. Selama kita memiliki lebih dari satu pohon, hubungkan dua pohon bersama-sama
+			dengan tepi dalam graf.<br><br>
+			Algoritma kedua ini dilakukan sebanyak n kali, karena memiliki penambahan n-1
+			tepi ke pohon sampai kita memiliki spanning tree. Efisiensi ditentukan
+			oleh seberapa cepat kita bisa mengetahui apakah tepi akan menghubungkan dua pohon 
+			atau akan menghubungkan dua node sudah di pohon yang sama.
+		</p>
+		<p>
+			Mari kita coba algoritma ini pada graf pertama di atas.
+		</p>
+		<img id="graf3" src="Image/3.png">
+		<p>
+			Graf pertama adalah graf yang diberikan, graf yang terputus sempurna adalah
+			titik mulai untuk algoritma ini. Pada graf di bagian bawah kanan spanning tree telah
+			selesai, karena  telah ditambahkan n - 1 = 4 tepi. Jika kita mencoba untuk melanjutkan, 
+			tepi berikutnya BE tidak dapat ditambahkan karena tidak menghubungkan dua pohon,
+			dan tidak CE juga tidak bisa. Spanning tree selesai.
+		</p>
+		</div>
+
+		<div id="footer">
+			Copyright Vincent Theophilus Ciputra 2015
+		</div>
+	</body>
+</html>
